@@ -1,42 +1,230 @@
-    <h1>LEVEL 30 UNLOCKED</h1>
-
-    <div class="reactor">30</div>
-
-    <div class="message">
-        Котик мой, 30 лет - это только начало.<br>
-        Это не возраст, это апгрейд 🚀<br><br>
-
-        Ты уже очень многого добился,
-        и дальше - только больше и лучше.<br><br>
-
-        Я тобой безумно горжусь и люблю тебя.<br>
-
-        Ты - лучший мужчина на свете,
-        мой самый любимый человек, мой лучший друг и мой главный повод улыбаться каждый день.<br><br>
-
-        И я хочу пройти с тобой все уровни этой жизни 💙
-    </div>
-
-    <div class="code">
-    </div>
-
-    <button onclick="unlock()">
-        Разблокировать сюрприз 🎁
-    </button>
-
-    <div class="footer">
-        Powered by love.exe
-    </div>
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Level 30 Unlocked 💙</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Courier New", monospace;
+    background:
+        radial-gradient(circle at center, rgba(0,150,255,.15), transparent 40%),
+        #070707;
+    color: #00ffc8;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.screen {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px;
+}
+.active {
+    display: flex;
+}
+.loader {
+    color: #00ff88;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+.card {
+    width: 100%;
+    max-width: 760px;
+    background: rgba(0,0,0,.8);
+    border: 1px solid rgba(0,255,200,.15);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow:
+        0 0 50px rgba(0,255,255,.12),
+        inset 0 0 30px rgba(0,255,255,.05);
+}
+h1 {
+    text-align: center;
+    color: #66e7ff;
+    margin-bottom: 20px;
+}
+.reactor {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    border: 4px solid #00d9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 60px rgba(0,217,255,.5),
+        inset 0 0 30px rgba(0,217,255,.4);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    50% {
+        transform: scale(1.03);
+    }
+}
+.message {
+    text-align: center;
+    line-height: 1.8;
+    font-size: 18px;
+}
+.code {
+    margin-top: 30px;
+    background: #050505;
+    border: 1px solid #1d1d1d;
+    border-radius: 12px;
+    padding: 20px;
+    color: #7CFF7C;
+    overflow-x: auto;
+}
+.code pre {
+    white-space: pre;
+    font-size: 16px;
+}
+button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    background: #00d9ff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+.big {
+    text-align: center;
+    max-width: 800px;
+    font-size: 32px;
+    line-height: 1.5;
+    color: white;
+}
+.subtitle {
+    margin-top: 25px;
+    color: #66e7ff;
+    font-size: 24px;
+}
+.heart {
+    position: fixed;
+    font-size: 24px;
+    animation: floatUp linear forwards;
+}
+@keyframes floatUp {
+    from {
+        transform: translateY(110vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
+}
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div id="loading" class="screen active">
+    <div id="loaderText" class="loader"></div>
 </div>
-<div class="big">
-    💙 Ты - всё, о чём я мечтала, в этой жизни 💙
-
-    <div class="subtitle">
-        С днём рождения, мой герой 🚀
-    </div>
-
-    <div class="subtitle">
-        Я люблю тебя бесконечно
+<div id="main" class="screen">
+    <div class="card">
+        <h1>LEVEL 30 UNLOCKED</h1>
+        <div class="reactor">30</div>
+        <div class="message">
+            Котик мой, 30 лет - это только начало.<br>
+            Это не возраст, это апгрейд 🚀<br><br>
+            Ты уже очень многого добился,
+            и дальше - только больше и лучше.<br><br>
+            Я тобой безумно горжусь и люблю тебя.<br>
+            Ты - лучший мужчина на свете,
+            мой самый любимый человек, мой лучший друг и мой главный повод улыбаться каждый день.<br><br>
+            И я хочу пройти с тобой все уровни этой жизни 💙
+        </div>
+        <div class="code">
+<pre>if (age === 30) {
+    beer.open();
+    party.start();
+}</pre>
+        </div>
+        <button onclick="unlock()">
+            Разблокировать сюрприз 🎁
+        </button>
+        <div class="footer">
+            Powered by love.exe
+        </div>
     </div>
 </div>
+<div id="final" class="screen">
+    <div class="big">
+        💙 Ты - всё, о чём я мечтала, в этой жизни 💙
+        <div class="subtitle">
+            С днём рождения, мой герой 🚀
+        </div>
+        <div class="subtitle">
+            Я люблю тебя бесконечно ❤️
+        </div>
+    </div>
+</div>
+<script>
+const lines = [
+"> initializing love.exe...",
+"> loading memories...",
+"> checking achievements...",
+"> compiling future...",
+"> LEVEL 30 UNLOCKED"
+];
+let line = 0;
+let char = 0;
+function type() {
+    if (line < lines.length) {
+        if (char < lines[line].length) {
+            document.getElementById("loaderText").innerHTML += lines[line][char];
+            char++;
+            setTimeout(type, 35);
+        } else {
+            document.getElementById("loaderText").innerHTML += "<br>";
+            line++;
+            char = 0;
+            setTimeout(type, 250);
+        }
+    } else {
+        setTimeout(() => {
+            document.getElementById("loading").classList.remove("active");
+            document.getElementById("main").classList.add("active");
+        }, 800);
+    }
+}
+type();
+function unlock() {
+    document.getElementById("main").classList.remove("active");
+    document.getElementById("final").classList.add("active");
+    for(let i = 0; i < 40; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💙";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+        document.body.appendChild(heart);
+    }
+}
+</script>
+</body>
+</html>
